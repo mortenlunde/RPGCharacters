@@ -2,9 +2,9 @@ namespace RPGCharacters
 {
     public class Character
     {
-        protected string Name { get; set; }
-        public string Description { get; set; }
-        protected Weapon EquippedWeapon { get; set; }
+        protected string Name { get; }
+        private string Description { get; }
+        protected Weapon EquippedWeapon { get; }
 
         protected Character(string name, string description, Weapon weapon)
         {
@@ -15,7 +15,7 @@ namespace RPGCharacters
 
         public virtual void Attack()
         {
-            Console.WriteLine($"{Name} attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
+            Console.WriteLine($"{Name} the {Description} attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
         }
     }
 
@@ -24,8 +24,9 @@ namespace RPGCharacters
     {
         public override void Attack()
         {
+            string description = GetType().Name;
             Console.WriteLine(
-                $"{Name} the Fighter attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
+                $"{Name} the {description.ToLower()} attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
         }
     }
 
@@ -33,8 +34,9 @@ namespace RPGCharacters
     {
         public override void Attack()
         {
+            string description = GetType().Name;
             Console.WriteLine(
-                $"{Name} the Wizard attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
+                $"{Name} the {description.ToLower()} attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
         }
     }
 
@@ -42,8 +44,9 @@ namespace RPGCharacters
     {
         public override void Attack()
         {
+            string description = GetType().Name;
             Console.WriteLine(
-                $"{Name} the Rogue attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
+                $"{Name} the {description.ToLower()} attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
         }
     }
 
@@ -51,8 +54,8 @@ namespace RPGCharacters
     {
         public override void Attack()
         {
-            Console.WriteLine(
-                $"{Name} the Ranger attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
+            string description = GetType().Name;
+            Console.WriteLine($"{Name} the {description.ToLower()} attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}");
         }
     }
 }

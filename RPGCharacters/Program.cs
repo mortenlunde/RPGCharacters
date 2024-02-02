@@ -12,8 +12,7 @@
                 new Ranger("Bob Lee Swagger", "Bob Lee Swagger is a retired Marine gunnery sergeant",
                     new Bow("bow", "a kill from 1000 yards"))
             ];
-
-            // Test attacks
+            
             foreach (Character character in characters)
             {
                 character.Attack();

@@ -12,7 +12,5 @@ namespace RPGCharacters
 
     public class Bow(string description, string attackMessage) : Weapon(description, attackMessage);
 
-    public class Staff(string description, string attackMessage) : Weapon(description, attackMessage);
-
     public class Wand(string description, string attackMessage) : Weapon(description, attackMessage);
 }
