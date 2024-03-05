@@ -2,8 +2,8 @@ namespace RPGCharacters
 {
     public class Weapon(string description, string attackMessage)
     {
-        public string Description { get; set; } = description;
-        public string AttackMessage { get; set; } = attackMessage;
+        public string Description { get; } = description;
+        public string AttackMessage { get; } = attackMessage;
     }
 
     public class Sword(string description, string attackMessage) : Weapon(description, attackMessage);
